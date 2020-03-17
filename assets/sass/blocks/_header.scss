@@ -157,3 +157,36 @@
     }
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .header {
+    &__logo {
+      max-width: 120px;
+      padding: 10px;
+
+      & .logo-desc {
+        text-align: center;
+      }
+    }
+
+    &__phone-wrapper {
+      padding-right: 60px;
+      flex-wrap: nowrap;
+
+      & .phone {
+        &-item {
+          padding: 0 5px;
+          border-right: none;
+        }
+      }
+    }
+
+    &__content-wrapper {
+      padding-left: 8%;
+    }
+  }
+
+  .header-icon {
+    margin-right: 5px;
+  }
+}

@@ -132,7 +132,7 @@ q:after {
   transition: .2s;
 }
 
-.phone, .social, .messenger, .lang, .nav .menu, .nav .menu-container, .nav .sub-menu {
+.phone, .social, .messenger, .lang, .nav .menu, .nav .menu-container, .nav .sub-menu, .menu-wrapper {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -441,31 +441,7 @@ em {
   }
 }
 
-@media (max-width: 544px) {
-  .hide-on-mobile {
-    display: none !important;
-  }
-  .hide-on-desktop {
-    display: block !important;
-  }
-  .center-on-mobile {
-    text-align: center !important;
-  }
-}
-
-@media (min-width: 545px) and (max-width: 768px) {
-  .hide-on-mobile {
-    display: none !important;
-  }
-  .hide-on-desktop {
-    display: block !important;
-  }
-  .center-on-mobile {
-    text-align: center !important;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .hide-on-mobile {
     display: none !important;
   }
@@ -9915,7 +9891,7 @@ table th[class*="col-"] {
   transition: .2s;
 }
 
-.phone, .social, .messenger, .lang, .nav .menu, .nav .menu-container, .nav .sub-menu {
+.phone, .social, .messenger, .lang, .nav .menu, .nav .menu-container, .nav .sub-menu, .menu-wrapper {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -10510,7 +10486,7 @@ select {
   transition: .2s;
 }
 
-.phone, .social, .messenger, .lang, .nav .menu, .nav .menu-container, .nav .sub-menu {
+.phone, .social, .messenger, .lang, .nav .menu, .nav .menu-container, .nav .sub-menu, .menu-wrapper {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -12955,6 +12931,31 @@ fieldset:disabled a.btn {
   width: 15px;
 }
 
+@media screen and (max-width: 1200px) {
+  .header__logo {
+    max-width: 120px;
+    padding: 10px;
+  }
+  .header__logo .logo-desc {
+    text-align: center;
+  }
+  .header__phone-wrapper {
+    padding-right: 60px;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+  .header__phone-wrapper .phone-item {
+    padding: 0 5px;
+    border-right: none;
+  }
+  .header__content-wrapper {
+    padding-left: 8%;
+  }
+  .header-icon {
+    margin-right: 5px;
+  }
+}
+
 .nav {
   display: block;
   position: relative;
@@ -13681,11 +13682,15 @@ fieldset:disabled a.btn {
   left: 10px;
 }
 
+.mobile-language .sub-menu {
+  background: #ffffff;
+}
+
 .mobile-language .menu-container {
   padding-top: 0;
 }
 
-.mobile-language .menu-container .menu-link {
+.mobile-language .menu-container .sub-menu-link {
   padding: 6px;
 }
 
@@ -13720,8 +13725,8 @@ fieldset:disabled a.btn {
 }
 
 #menu-language-switcher-1 .menu-item-has-children-arrow {
-  top: 13px;
-  right: -15px;
+  top: 15px;
+  right: -10px;
   padding: 5px;
 }
 
@@ -13951,6 +13956,13 @@ body {
   position: relative;
   overflow-x: hidden;
   min-height: 100%;
+  padding-top: 60px;
+}
+
+@media screen and (min-width: 1025px) {
+  .wrapper {
+    padding-top: 0;
+  }
 }
 
 b,

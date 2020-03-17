@@ -69,7 +69,7 @@
 <?php wp_body_open(); ?>
 <div class="wrapper js-container"><!--Do not delete!-->
 
-    <header class="header">
+    <header class="header hide-on-mobile">
             <div class="container">
                 <div class="header__top-section">
                     <div class="header__logo">
@@ -177,6 +177,19 @@
                 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                 'depth' => 3
             )); ?>
+            <?php if (has_nav_menu('second-menu')) { ?>
+                <div class="mobile-menu">
+                    <?php wp_nav_menu(array(
+                        'theme_location' => 'second-menu',
+                        'container' => false,
+                        'menu_class' => 'menu-wrapper',
+                        'menu_id' => '',
+                        'fallback_cb' => 'wp_page_menu',
+                        'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                        'depth' => 3
+                    )); ?>
+                </div>
+            <?php } ?>
             <?php if (has_nav_menu('language-switcher')) { ?>
                 <div class="mobile-language">
                     <?php wp_nav_menu(array(

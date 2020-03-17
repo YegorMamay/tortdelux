@@ -484,10 +484,14 @@
   top: 10px;
   left: 10px;
 
+  & .sub-menu {
+    background: $primary_color_1;
+  }
+
   & .menu-container {
     padding-top: 0;
 
-    & .menu-link {
+    & .sub-menu-link {
       padding: 6px;
     }
 
@@ -518,8 +522,8 @@
 
 #menu-language-switcher-1 {
   & .menu-item-has-children-arrow {
-    top: 13px;
-    right: -15px;
+    top: 15px;
+    right: -10px;
     padding: 5px;
 
     &:before {
@@ -534,4 +538,8 @@
     top: 100%;
     z-index: 1;
   }
+}
+
+.menu-wrapper {
+  @extend %reset-list;
 }
