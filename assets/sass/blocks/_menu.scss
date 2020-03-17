@@ -9,6 +9,31 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    & .nav {
+      width: 50%;
+      padding-right: 12%;
+
+      &:last-child {
+        padding-right: 0;
+        padding-left: 12%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & .menu-container {
+          width: 75%;
+          margin-left: -10px;
+        }
+      }
+
+      & .menu-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
   }
 
   .menu {

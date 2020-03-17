@@ -7,40 +7,55 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>">
 
-    <title><?php 
-        if ( is_front_page() ) { echo bloginfo('name'); } 
-        elseif ( is_post_type_archive() )  { echo post_type_archive_title();}
-        elseif ( !is_front_page() || !is_page()) { echo single_post_title(); } 
-        elseif ( !is_front_page() || !is_single()) { echo the_title();} 
-    ?></title>
-    
+    <title><?php
+        if (is_front_page()) {
+            echo bloginfo('name');
+        } elseif (is_post_type_archive()) {
+            echo post_type_archive_title();
+        } elseif (!is_front_page() || !is_page()) {
+            echo single_post_title();
+        } elseif (!is_front_page() || !is_single()) {
+            echo the_title();
+        }
+        ?></title>
+
     <meta name="description" content="<?php bloginfo('description'); ?>">
 
     <!-- OpenGraph -->
-    <meta property="og:locale" content="ru_RU" />
-    <meta property="og:locale:alternate" content="ru_RU" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="<?php 
-        if ( is_front_page() ) { echo bloginfo('name'); } 
-        elseif ( is_post_type_archive() )  { echo post_type_archive_title();}
-        elseif ( !is_front_page() || !is_page()) { echo single_post_title(); } 
-        elseif ( !is_front_page() || !is_single()) { echo the_title();} 
-    ?>" />
+    <meta property="og:locale" content="ru_RU"/>
+    <meta property="og:locale:alternate" content="ru_RU"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="<?php
+    if (is_front_page()) {
+        echo bloginfo('name');
+    } elseif (is_post_type_archive()) {
+        echo post_type_archive_title();
+    } elseif (!is_front_page() || !is_page()) {
+        echo single_post_title();
+    } elseif (!is_front_page() || !is_single()) {
+        echo the_title();
+    }
+    ?>"/>
     <meta property="og:description" content="<?php bloginfo('description'); ?>">
-    <meta property="og:url" content="<?php echo esc_url(site_url()); ?>" />
-    <meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
-    <meta property="og:image" content="<?php echo esc_url(the_post_thumbnail_url()); ?>" />
-    <meta property="og:image:secure_url" content="<?php echo esc_url(the_post_thumbnail_url()); ?>" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="628" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="<?php 
-        if ( is_front_page() ) { echo bloginfo('name'); } 
-        elseif ( is_post_type_archive() )  { echo post_type_archive_title();}
-        elseif ( !is_front_page() || !is_page()) { echo single_post_title(); } 
-        elseif ( !is_front_page() || !is_single()) { echo the_title();} 
-    ?>" />
-    <meta name="twitter:image" content="<?php echo esc_url(the_post_thumbnail_url()); ?>" />
+    <meta property="og:url" content="<?php echo esc_url(site_url()); ?>"/>
+    <meta property="og:site_name" content="<?php bloginfo('name'); ?>"/>
+    <meta property="og:image" content="<?php echo esc_url(the_post_thumbnail_url()); ?>"/>
+    <meta property="og:image:secure_url" content="<?php echo esc_url(the_post_thumbnail_url()); ?>"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="628"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="<?php
+    if (is_front_page()) {
+        echo bloginfo('name');
+    } elseif (is_post_type_archive()) {
+        echo post_type_archive_title();
+    } elseif (!is_front_page() || !is_page()) {
+        echo single_post_title();
+    } elseif (!is_front_page() || !is_single()) {
+        echo the_title();
+    }
+    ?>"/>
+    <meta name="twitter:image" content="<?php echo esc_url(the_post_thumbnail_url()); ?>"/>
     <!-- OpenGraph end-->
 
     <link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri() . '/assets/img/favicon.ico'); ?>"
@@ -54,41 +69,38 @@
 <?php wp_body_open(); ?>
 <div class="wrapper js-container"><!--Do not delete!-->
 
-    <header class="page-header fixed-to-top">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
-                    <div class="logo">
-	                    <?php get_default_logo_link([
+    <header class="header">
+            <div class="container">
+                <div class="header__top-section">
+                    <div class="header__logo">
+                        <?php get_default_logo_link([
                             'name'    => 'logo.svg',
                             'options' => [
                                 'class'  => 'logo-img',
-                                'width'  => 100,
+                                'width'  => 160,
                                 'height' => 50,
-                                ],
-                            ])
-                        ?>
+                            ],
+                        ]) ?>
                     </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
-                    <div class="nav-wrapper">
-                        <?php if (has_nav_menu('main-nav')) { ?>
-                            <nav class="nav js-menu">
-                                <button type="button" tabindex="0" class="menu-item-close menu-close js-menu-close"></button>
-                                <?php wp_nav_menu(array(
-                                    'theme_location' => 'main-nav',
-                                    'container' => false,
-                                    'menu_class' => 'menu-container',
-                                    'menu_id' => '',
-                                    'fallback_cb' => 'wp_page_menu',
-                                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                                    'depth' => 3
-                                )); ?>
-                            </nav>
+                    <div class="header__phone-wrapper">
+                    <span class="header-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </span>
+                        <?php echo do_shortcode('[bw-phone]'); ?>
+                    </div>
+                    <div class="header__content-wrapper">
+                        <?php
+                        $address = get_theme_mod('bw_additional_address');
+                        if (!empty($address)) { ?>
+                        <span class="header-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </span>
+                        <span class="header__text">
+                        <?php echo pll_e('Address'); ?>
+                        </span>
                         <?php } ?>
                         <?php if (has_nav_menu('language-switcher')) { ?>
-                            <nav class="nav js-menu">
-                                <button type="button" tabindex="0" class="menu-item-close menu-close js-menu-close"></button>
+                            <nav class="nav language-switcher">
                                 <?php wp_nav_menu(array(
                                     'theme_location' => 'language-switcher',
                                     'container' => false,
@@ -100,15 +112,47 @@
                                 )); ?>
                             </nav>
                         <?php } ?>
+                        <button type="button" class="btn btn-sm btn-secondary <?php the_lang_class('js-call-back'); ?>">
+                            <?php pll_e('Call-back', 'brainworks'); ?>
+                        </button>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                    <button type="button" class="btn btn-secondary btn-block <?php the_lang_class('js-call-back'); ?>">
-                        <?php _e('Call back', 'brainworks'); ?>
-                    </button>
+            </div>
+            <div class="header__bottom-section">
+                <div class="container">
+                    <nav class="nav-wrapper">
+                        <?php if (has_nav_menu('main-nav')) { ?>
+                            <div class="nav js-menu">
+                                <?php wp_nav_menu(array(
+                                    'theme_location' => 'main-nav',
+                                    'container' => false,
+                                    'menu_class' => 'menu-container',
+                                    'menu_id' => '',
+                                    'fallback_cb' => 'wp_page_menu',
+                                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                    'depth' => 3
+                                )); ?>
+                            </div>
+                        <?php } ?>
+                        <?php if (has_nav_menu('second-menu')) { ?>
+                            <div class="nav js-menu">
+                                <?php wp_nav_menu(array(
+                                    'theme_location' => 'second-menu',
+                                    'container' => false,
+                                    'menu_class' => 'menu-container',
+                                    'menu_id' => '',
+                                    'fallback_cb' => 'wp_page_menu',
+                                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                    'depth' => 3
+                                )); ?>
+                                <div class="header-social">
+                                    <?php echo do_shortcode('[bw-social]'); ?>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </nav>
                 </div>
             </div>
-        </div>
     </header>
 
     <!-- Mobile menu start-->
@@ -125,14 +169,14 @@
         <nav class="nav js-menu hide-on-desktop">
             <button type="button" tabindex="0" class="menu-item-close menu-close js-menu-close"></button>
             <?php wp_nav_menu(array(
-            'theme_location' => 'main-nav',
-            'container' => false,
-            'menu_class' => 'menu-container',
-            'menu_id' => '',
-            'fallback_cb' => 'wp_page_menu',
-            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-            'depth' => 3
-        )); ?>
+                'theme_location' => 'main-nav',
+                'container' => false,
+                'menu_class' => 'menu-container',
+                'menu_id' => '',
+                'fallback_cb' => 'wp_page_menu',
+                'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                'depth' => 3
+            )); ?>
             <?php if (has_nav_menu('language-switcher')) { ?>
                 <div class="mobile-language">
                     <?php wp_nav_menu(array(
