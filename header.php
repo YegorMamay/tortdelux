@@ -156,9 +156,18 @@
     </header>
 
     <!-- Mobile menu start-->
+    <div class="mobile-logo hide-on-desktop">
+        <?php get_default_logo_link([
+            'name'    => 'logo.svg',
+            'options' => [
+                'class'  => 'logo-img',
+                'width'  => 160,
+                'height' => 50,
+            ],
+        ]) ?>
+    </div>
     <div class="nav-mobile-header">
         <div class="social-mob"><?php echo do_shortcode('[bw-social]'); ?></div>
-        <div class="logo"><?php get_default_logo_link(); ?></div>
         <button class="hamburger js-hamburger" type="button" tabindex="0">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>

@@ -158,6 +158,10 @@ fieldset:disabled a.btn {
       }
     }
   }
+
+  &:active {
+    transform: scale(0.97);
+  }
 }
 
 .btn-secondary {
@@ -226,6 +230,10 @@ fieldset:disabled a.btn {
         box-shadow: 0 0 0 $btn-focus-width rgba($border, .5);
       }
     }
+  }
+
+  &:active {
+    transform: scale(0.97);
   }
 }
 

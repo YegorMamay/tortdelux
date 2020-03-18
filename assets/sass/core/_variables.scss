@@ -27,6 +27,7 @@ $container-max-widths: (
 // THEME COLORS
 $themeColorOne: #572929; // Обычно самый темный цвет. Используется для: заголовков h1-h6 - $titleFontColor и других.
 $themeColorTwo: #EE409E; // Основной/акцентный цвет бренда. Поменять значение этой переменной согласно макета обязательно!
+$dark_accent_color: #9C085F;
 $border_light_color: #EAEAEA;
 $logo_box_shadow: 0 4px 12px rgba(254, 139, 166, 0.15);
 $logo_border_radius: 0px 0px 25px 25px;
@@ -72,7 +73,7 @@ $menuMobileSubMenuTextColorOnHover: #fff;
 
 // MENU Mobile
 $navArrowColor: #fff;
-$navHeaderMobileBGColor: $themeColorOne;
+$navHeaderMobileBGColor: $themeColorTwo;
 $navHamburgerMobileColor: #fff;
 $menuMobileBGColor: $themeColorOne;
 $menuMobileLinkFontSize: 20px;
