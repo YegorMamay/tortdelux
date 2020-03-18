@@ -2,7 +2,7 @@
   display: block;
   position: relative;
   text-align: center;
-  background: $menuBgColor;
+  background: $light_bg_color;
 
   &-wrapper {
     display: flex;
@@ -49,7 +49,7 @@
       padding: 5px;
 
       &:hover {
-        background: $menuBgColorActive;
+        background: $light_bg_color;
 
         a {
           color: $menuFontColorActive;
@@ -120,8 +120,9 @@
       }
 
       &-current {
-        border-bottom: 5px solid $menuBgColorActive;
-        padding-bottom: 0;
+        & .menu-link {
+          color: $themeColorTwo;
+        }
       }
 
       .no-touch &:hover,

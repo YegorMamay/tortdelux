@@ -1,6 +1,12 @@
+.home {
+  & .header {
+    margin-bottom: 0;
+  }
+}
+
 .header {
   padding: 10px 0 32px;
-  background-color: $headerBgColor;
+  background-color: $light_bg_color;
   color: $headerFontColor;
   margin-bottom: 15px;
 
@@ -53,6 +59,7 @@
   }
 
   &__bottom-section {
+    background: $light_bg_color;
     border-top: 1px solid $border_light_color;
     border-bottom: 1px solid $border_light_color;
   }

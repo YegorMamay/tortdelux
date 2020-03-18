@@ -5,7 +5,7 @@ $btn-gradient-angle: 180deg;
 // Medium Buttons
 $btn-padding-y: 10px;
 $btn-padding-x: 40px;
-$btn-font-size: 16px;
+$btn-font-size: 14px;
 $btn-line-height: 1.5;
 
 // Small Buttons
@@ -95,11 +95,11 @@ fieldset:disabled a.btn {
   $background: $themeColorTwo;
   $btn-primary-color: white;
   $btn-primary-color-hover: white;
-  $border: $themeColorOne;
-  $hover-background: darken($themeColorOne, 12%);
-  $hover-border: darken($themeColorOne, 12%);
-  $active-background: $themeColorOne;
-  $active-border: $themeColorOne;
+  $border: $themeColorTwo;
+  $hover-background: darken($themeColorTwo, 12%);
+  $hover-border: darken($themeColorTwo, 12%);
+  $active-background: $themeColorTwo;
+  $active-border: $themeColorTwo;
 
   @if $btn-enable-gradients {
     background: $background linear-gradient($btn-gradient-angle, mix(#fff, $background, 15%), $background) repeat-x;
@@ -136,15 +136,15 @@ fieldset:disabled a.btn {
 
   &.disabled,
   &:disabled {
-    color: $themeColorOne;
-    background-color: $themeColorOne;
+    color: $themeColorTwo;
+    background-color: $themeColorTwo;
     border-color: $border;
   }
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active {
-    color: $btn-primary-color;
-    background-color: lighten($active-background, 10%);
+    color: $btn-primary-color-hover;
+    background-color: $active-background;
     @if $btn-enable-gradients {
       background-image: none;
     }
