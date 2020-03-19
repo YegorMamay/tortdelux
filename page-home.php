@@ -154,4 +154,25 @@ $first_screen_content = get_field('first_screen_content');
         </div>
     </div>
 </div>
+<section class="bottom-section">
+    <div class="container">
+        <h2 class="main-title h3"><?php echo get_post_meta(get_the_ID(), 'bottom_block_title', true); ?></h2>
+        <?php $accordion_content = get_field('bottom_block_list'); ?>
+        <div class="bottom-section__wrapper">
+            <?php foreach ($accordion_content as $content) { ?>
+                <div class="bottom-section__item">
+                    <div class="bottom-section__caption js-toggle-accordion">
+                        <div class="bottom-section__title">
+                            <?php echo $content['bottom_block_title']; ?>
+                        </div>
+                        <button class="bottom-section__button js-toggle" type="button"></button>
+                    </div>
+                    <div class="bottom-section__content">
+                        <?php echo $content['bottom_block_description']; ?>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+</section>
 <?php get_footer(); ?>

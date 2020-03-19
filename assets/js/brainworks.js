@@ -256,4 +256,11 @@
     $(".js-menu-close, .menu-link").on("click", function() {
         $("body").removeClass("body-overflow");
     });
+    $(".js-toggle-accordion").on("click", function() {
+        var currentItem = $(this);
+        $(".js-toggle-accordion").not(currentItem).removeClass("active");
+        currentItem.toggleClass("active");
+        $(".js-toggle-accordion").not(currentItem).siblings(".bottom-section__content").slideUp("linear");
+        currentItem.siblings(".bottom-section__content").slideToggle("linear");
+    });
 })(window, document, jQuery, window.jpAjax);

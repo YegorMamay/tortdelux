@@ -402,7 +402,7 @@
 
         links.each((index, element) => {
             const $element = $(element), href = $element.attr('href');
-            if(href) {
+            if (href) {
                 if (href[0] === '#' || href.slice(0, 2) === '/#' && !(href.slice(1, 3) === '__')) {
                     $element.on('click', (e) => {
                         e.preventDefault();
@@ -521,6 +521,14 @@
 
     $('.js-menu-close, .menu-link').on('click', function () {
         $('body').removeClass('body-overflow');
+    });
+
+    $('.js-toggle-accordion').on('click', function () {
+        let currentItem = $(this);
+        $('.js-toggle-accordion').not(currentItem).removeClass('active');
+        currentItem.toggleClass('active');
+        $('.js-toggle-accordion').not(currentItem).siblings('.bottom-section__content').slideUp('linear');
+        currentItem.siblings('.bottom-section__content').slideToggle('linear');
     });
 
 })(window, document, jQuery, window.jpAjax);

@@ -127,7 +127,7 @@ q:after {
   content: none;
 }
 
-.review-social, .review-slider .slick-arrow, a, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .list-cat__link, .list-cat__link:hover, .svg-icon {
+.bottom-section__caption.active .bottom-section__button:before, .bottom-section__button:before, .review-social, .review-slider .slick-arrow, a, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .list-cat__link, .list-cat__link:hover, .svg-icon {
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -9886,7 +9886,7 @@ table th[class*="col-"] {
   clear: both;
 }
 
-.review-social, .review-slider .slick-arrow, a, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .list-cat__link, .list-cat__link:hover, .svg-icon {
+.bottom-section__caption.active .bottom-section__button:before, .bottom-section__button:before, .review-social, .review-slider .slick-arrow, a, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .list-cat__link, .list-cat__link:hover, .svg-icon {
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -10481,7 +10481,7 @@ select {
   }
 }
 
-.review-social, .review-slider .slick-arrow, a, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .list-cat__link, .list-cat__link:hover, .svg-icon {
+.bottom-section__caption.active .bottom-section__button:before, .bottom-section__button:before, .review-social, .review-slider .slick-arrow, a, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .list-cat__link, .list-cat__link:hover, .svg-icon {
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -11722,6 +11722,133 @@ select {
 @media screen and (min-width: 1200px) {
   .review-section__wrapper {
     padding: 25px 0;
+  }
+}
+
+.bottom-section {
+  width: 100%;
+  padding: 4% 0;
+}
+
+.bottom-section__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  padding: 15px 0;
+}
+
+.bottom-section__item {
+  border: 8px solid #F2F2F2;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 15px 20px;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.bottom-section__item:before {
+  content: '';
+  outline: 6px solid #ffffff;
+  background: #EE409E;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  left: -15px;
+  z-index: 1;
+}
+
+.bottom-section__content {
+  width: 100%;
+  padding: 15px 0;
+  color: #572929;
+  font-size: 15px;
+  line-height: normal;
+  letter-spacing: 0.03em;
+  text-align: left;
+  display: none;
+}
+
+.bottom-section__caption {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.bottom-section__caption.active .bottom-section__button:before {
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.bottom-section__title {
+  color: #572929;
+  font-size: 16px;
+  font-weight: 700;
+  width: calc(100% - 40px);
+}
+
+.bottom-section__button {
+  border: none;
+  background: #F2F2F2;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.bottom-section__button:before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-bottom: 1px solid #572929;
+  border-left: 1px solid #572929;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  z-index: 1;
+}
+
+@media screen and (min-width: 1200px) {
+  .bottom-section__title {
+    font-size: 20px;
   }
 }
 

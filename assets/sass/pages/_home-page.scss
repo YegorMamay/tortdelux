@@ -292,3 +292,111 @@
     }
   }
 }
+
+.bottom-section {
+  width: 100%;
+  padding: 4% 0;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  &__item {
+    border: 8px solid $light_border_color;
+    border-radius: $small_border_radius;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 15px 20px;
+    position: relative;
+    margin-bottom: 15px;
+
+    &:before {
+      content: '';
+      outline: 6px solid $primary_color_1;
+      background: $themeColorTwo;
+      border-radius: $border_round_radius;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 20px;
+      left: -15px;
+      z-index: 1;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    padding: 15px 0;
+    color: $themeColorOne;
+    font-size: 15px;
+    line-height: normal;
+    letter-spacing: 0.03em;
+    text-align: left;
+    display: none;
+  }
+
+  &__caption {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &.active {
+      & .bottom-section__button {
+        &:before {
+          @extend %smooth_animation;
+          transform: rotate(135deg);
+        }
+      }
+    }
+  }
+
+  &__title {
+    color: $themeColorOne;
+    font-size: 16px;
+    font-weight: 700;
+    width: calc(100% - 40px);
+  }
+
+  &__button {
+    border: none;
+    background: $light_border_color;
+    width: 35px;
+    height: 35px;
+    border-radius: $border_round_radius;
+    position: relative;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-bottom: 1px solid $themeColorOne;
+      border-left: 1px solid $themeColorOne;
+      transform: rotate(-45deg);
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      z-index: 1;
+      @extend %smooth_animation;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .bottom-section {
+    &__title {
+      font-size: 20px;
+    }
+  }
+}
