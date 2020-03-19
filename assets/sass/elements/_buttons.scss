@@ -3,7 +3,7 @@ $btn-enable-gradients: false;
 $btn-gradient-angle: 180deg;
 
 // Medium Buttons
-$btn-padding-y: 10px;
+$btn-padding-y: 12px;
 $btn-padding-x: 40px;
 $btn-font-size: 14px;
 $btn-line-height: 1.5;
@@ -419,7 +419,7 @@ fieldset:disabled a.btn {
 
 @media (max-width: 1024px) {
   .btn {
-    padding: 7px 28px;
+    padding: 10px 28px;
     font-size: 15px;
   }
 
@@ -436,7 +436,7 @@ fieldset:disabled a.btn {
 
 @media (max-width: 768px) {
   .btn {
-    padding: 6px 26px;
+    padding: 10px 26px;
     font-size: 14px;
   }
 
@@ -453,7 +453,7 @@ fieldset:disabled a.btn {
 
 @media (max-width: 544px) {
   .btn {
-    padding: 5px 24px;
+    padding: 10px 24px;
     font-size: 12px;
   }
 

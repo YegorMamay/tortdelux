@@ -12,7 +12,7 @@
     color: $themeColorOne;
     font-size: 16px;
     line-height: normal;
-    margin: 4% 0;
+    margin: 6% 0;
   }
 
   &__text {
@@ -89,6 +89,35 @@
     &__description {
       text-align: center;
     }
+  }
+}
+
+.main-title {
+  text-align: center;
+  margin: 15px 0 20px;
+}
+
+.categories-section {
+  width: 100%;
+  padding: 4% 0;
+
+  &__description {
+    color: $themeColorOne;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  &__wrapper {
+    padding: 25px 0;
+    width: 100%;
+  }
+
+  &__button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 }
 

@@ -10,7 +10,7 @@ $attachment_elem_id = get_post_meta(get_the_ID(), 'first_screen_image', true);
 $attachment_image = wp_get_attachment_url($attachment_elem_id);
 $first_screen_content = get_field('first_screen_content');
 ?>
-<div class="top-section">
+<section class="top-section">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-lg-7">
@@ -32,12 +32,17 @@ $first_screen_content = get_field('first_screen_content');
             </div>
         </div>
     </div>
-</div>
-<div class="categories-section">
+</section>
+<section class="categories-section">
     <div class="container">
-        <?php echo do_shortcode('[sn_cat id="28, 34, 36, 38, 40, 42, 44, 46, 48" term="sn_cat"]'); ?>
+        <h2 class="main-title h3"><?php echo get_post_meta(get_the_ID(), 'category_title', true); ?></h2>
+        <div class="categories-section__description"><?php echo get_post_meta(get_the_ID(), 'category_description', true); ?></div>
+        <div class="categories-section__wrapper">
+            <?php get_template_part('loops/content', 'home'); ?>
+        </div>
+        <div class="categories-section__button-wrapper">
+            <button class="btn btn-primary btn-md" type="button"><?php echo get_post_meta(get_the_ID(), 'category_button_text', true); ?></button>
+        </div>
     </div>
-</div>
-
-<?php get_template_part('loops/content', 'home'); ?>
+</section>
 <?php get_footer(); ?>
