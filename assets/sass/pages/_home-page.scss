@@ -119,5 +119,24 @@
     justify-content: center;
     width: 100%;
   }
+
+  &__decor-image {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  .categories-section {
+    position: relative;
+    overflow: hidden;
+
+    &__decor-image {
+      display: block;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      right: 0;
+    }
+  }
 }
 

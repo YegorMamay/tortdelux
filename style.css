@@ -11527,6 +11527,25 @@ select {
   width: 100%;
 }
 
+.categories-section__decor-image {
+  display: none;
+}
+
+@media screen and (min-width: 1680px) {
+  .categories-section {
+    position: relative;
+    overflow: hidden;
+  }
+  .categories-section__decor-image {
+    display: block;
+    position: absolute;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    top: 50%;
+    right: 0;
+  }
+}
+
 ol.commentlist .comment-body {
   margin-bottom: 25px;
 }

@@ -41,8 +41,9 @@ $first_screen_content = get_field('first_screen_content');
             <?php get_template_part('loops/content', 'home'); ?>
         </div>
         <div class="categories-section__button-wrapper">
-            <button class="btn btn-primary btn-md" type="button"><?php echo get_post_meta(get_the_ID(), 'category_button_text', true); ?></button>
+            <button class="btn btn-primary btn-md js-request" type="button"><?php echo get_post_meta(get_the_ID(), 'category_button_text', true); ?></button>
         </div>
     </div>
+    <img class="categories-section__decor-image" src="/wp-content/themes/tortdelux/assets/img/katalog-candy.png" alt="image">
 </section>
 <?php get_footer(); ?>
