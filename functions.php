@@ -99,3 +99,36 @@ acf_add_local_field_group(array(
 ));
 
 endif;
+
+//Преимущества
+add_action('init', 'my_custom_advantages');
+function my_custom_advantages(){
+    register_post_type('custom_advantages', array(
+        'labels'             => array(
+            'name'               => 'Преимущества',
+            'singular_name'      => 'Преимущество',
+            'add_new'            => 'Добавить блок',
+            'add_new_item'       => 'Добавить новый блок',
+            'edit_item'          => 'Редактировать блок',
+            'new_item'           => 'Новый блок',
+            'view_item'          => 'Посмотреть блок',
+            'search_items'       => 'Найти блок',
+            'not_found'          =>  'Блоков не найдено',
+            'not_found_in_trash' => 'В корзине блоков не найдено',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Преимущества'
+
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title', 'editor', 'thumbnail')
+    ) );
+}

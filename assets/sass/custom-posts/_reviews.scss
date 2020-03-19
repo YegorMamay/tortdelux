@@ -14,7 +14,7 @@ $review-social-background: $themeColorOne !default;
 $review-social-hover-color: #fff !default;
 $review-social-hover-background: $themeColorTwo !default;
 
-$review-arrow-size: 32px !default;
+$review-arrow-size: 40px !default;
 $review-arrow-color: $themeColorOne !default;
 $review-arrow-font-size: 24px !default;
 $review-arrow-font-weight: bold !default;
@@ -29,171 +29,225 @@ $review-prev: '\00ab'; // &laquo;
 $review-next: '\00bb'; // &raquo;
 
 .review {
-    &-list {
+
+  &-item {
+    margin-bottom: 30px;
+    box-shadow: none;
+  }
+
+  &-container {
+    border: 8px solid $light_border_color;
+    border-radius: $small_border_radius;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 25px 20px;
+    position: relative;
+  }
+
+  &-caption {
+    width: calc(100% - 100px);
+    padding: 0 20px;
+  }
+
+  &-client {
+    width: 100px;
+    height: 100px;
+  }
+
+  &-title {
+    color: $themeColorTwo;
+    font-size: 17px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  &-avatar {
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+
+  &-social {
+    cursor: pointer;
+    position: absolute;
+    left: 10%;
+    bottom: -18px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    line-height: 30px;
+    border-radius: 50%;
+    color: $review-social-color;
+    background-color: $themeColorTwo;
+    outline: 8px solid $primary_color_1;
+    @extend %smooth_animation;
+
+    &:hover,
+    &:active {
+      color: $review-social-hover-color;
+      background-color: lighten($themeColorTwo, 10%);
+    }
+  }
+
+  &-content {
+    &,
+    p {
+      color: $themeColorOne;
+      font-size: 15px;
+      line-height: normal;
+      text-align: left;
+    }
+  }
+
+  &-date {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+  }
+
+  &-slider {
+    padding: 0 40px;
+    margin: 20px 0;
+
+    .review-item {
 
     }
 
-    &-item {
-        margin-bottom: 30px;
+    .slick {
+      &-list {
+
+      }
+
+      &-arrow {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        margin-top: -($review-arrow-size / 2);
+        border: none;
+        padding: 10px;
+        width: $review-arrow-size;
+        height: $review-arrow-size;
+        border-radius: $review-arrow-radius;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @extend %smooth_animation;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:hover {
+          background-color: $themeColorTwo;
+
+          & .slider-icon {
+            fill: $primary_color_1;
+          }
+        }
+
+        & .slider-icon {
+          display: inline-flex;
+          width: 16px;
+          height: 16px;
+          fill: $themeColorOne;
+        }
+      }
+
+      &-prev {
+        left: 0;
+
+        //&::before {
+        //    content: $review-prev;
+        //}
+      }
+
+      &-next {
+        right: 0;
+
+        //&::before {
+        //    content: $review-next;
+        //}
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .review {
+    &-container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     &-client {
-        position: relative;
-        max-width: 137px;
-        max-height: 137px;
-        margin: 0 auto 15px;
+      width: $review-client-size;
+      height: $review-client-size;
+      margin-bottom: 15px;
     }
 
-    &-title {
-        font-weight: $review-title-font-weight;
-        text-transform: $review-title-text-transform;
+    &-caption {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
     }
 
-    &-avatar {
-        display: block;
-        margin: 0 auto;
-        border-radius: 50%;
+    &-client {
+      position: relative;
     }
 
     &-social {
-        cursor: pointer;
-        position: absolute;
-        right: 10px;
-        bottom: 0;
-        display: inline-block;
-        vertical-align: middle;
-        width: $review-social-size;
-        height: $review-social-size;
-        font-size: 14px;
-        line-height: $review-social-size;
-        border-radius: 50%;
-        color: $review-social-color;
-        background-color: $review-social-background;
-        @extend %smooth_animation;
-
-        &:hover,
-        &:active {
-            color: $review-social-hover-color;
-            background-color: $review-social-hover-background;
-        }
-    }
-
-    &-author,
-    &-title {
-        color: $review-title-color;
-        font-size: $review-title-font-size;
-        line-height: 1.3;
-        margin-bottom: 15px;
+      outline: none;
+      bottom: -10px;
+      left: auto;
+      right: -5px;
     }
 
     &-content {
-        &,
-        p {
-            color: $review-content-color;
-            font-size: $review-content-font-size;
-            line-height: 1.5;
-        }
-    }
-
-    &-date {
-        margin-top: 15px;
-        font-size: 14px;
-        color: #333;
+      font-size: 15px;
+      text-align: center;
     }
 
     &-slider {
-        padding: 0 40px;
-        margin: 20px 0;
+      padding: 0;
 
-        .review-item {
+      .slick {
+        &-list {
 
         }
 
-        .slick {
-            &-list {
-
-            }
-
-            &-arrow {
-                cursor: pointer;
-                position: absolute;
-                top: 50%;
-                z-index: 10;
-                margin-top: -($review-arrow-size / 2);
-                border: $review-arrow-border-width solid $review-arrow-border-color;
-                padding: 0;
-                width: $review-arrow-size;
-                height: $review-arrow-size;
-                color: $review-arrow-color;
-                font-size: $review-arrow-font-size;
-                font-weight: $review-arrow-font-weight;
-                line-height: 1;
-                text-align: center;
-                border-radius: $review-arrow-radius;
-                background-color: $review-arrow-background;
-                box-shadow: $shadow;
-                @extend %smooth_animation;
-
-                &:focus {
-                    outline: none;
-                }
-
-                &:hover {
-                    color: $review-arrow-hover-color;
-                    border-color: $review-arrow-hover-border-color;
-                    background-color: $review-arrow-hover-background;
-                    box-shadow: none;
-                }
-            }
-
-            &-prev {
-                left: 0;
-
-                //&::before {
-                //    content: $review-prev;
-                //}
-            }
-
-            &-next {
-                right: 0;
-
-                //&::before {
-                //    content: $review-next;
-                //}
-            }
+        &-arrow {
+          top: ($review-client-size - $review-arrow-size) / 2;
+          margin-top: 0;
         }
+      }
     }
+  }
 }
 
-@media only screen and (max-width: 554px) {
-    .review {
-        &-client {
-            width: $review-client-size;
-            height: $review-client-size;
-            margin-left: auto;
-            margin-right: auto;
+@media screen and (min-width: 1200px) {
+  .review {
+    &-slider {
+      & .slick {
+        &-arrow {
+          &.slick-prev {
+            left: -10%;
+          }
+
+          &.slick-next {
+            right: -10%;
+          }
         }
-
-        &-content {
-            &,
-            p {
-                font-size: 14px;
-            }
-        }
-
-        &-slider {
-            padding: 0;
-
-            .slick {
-                &-list {
-
-                }
-
-                &-arrow {
-                    top: ($review-client-size - $review-arrow-size) / 2;
-                    margin-top: 0;
-                }
-            }
-        }
+      }
     }
+  }
 }

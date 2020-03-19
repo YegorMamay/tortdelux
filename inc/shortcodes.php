@@ -584,6 +584,7 @@ if (!function_exists('bw_reviews_shortcode')) {
 
                 $output .= '<div id="post-' . get_the_ID() . '" ' . $post_class . '>';
 
+                $output .= '<div class="review-container">';
                 $output .= '<div class="review-client">';
                 $output .= get_the_post_thumbnail(null, 'thumbnail', array('class' => 'review-avatar'));
                 if (count($social)) {
@@ -592,9 +593,11 @@ if (!function_exists('bw_reviews_shortcode')) {
                     $output .= '</a>';
                 }
                 $output .= '</div>';
+                $output .= '<div class="review-caption">';
                 $output .= '<div class="review-title">' . get_the_title() . '</div>';
                 $output .= '<div class="review-content">' . get_the_content() . '</div>';
-
+                $output .= '</div>';
+                $output .= '</div>';
                 $output .= '</div>';
             }
 
