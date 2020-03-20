@@ -8,12 +8,101 @@
             </div>
         </div><!-- .pre-footer end-->
     <?php endif; ?>
-
-    <div class="container">
-        <div class="copyright">
-            <div class="date">&copy; <?php echo date('Y'); ?>. Все права защищены</div>
-            <div class="developer">
-                <?php _e('Developed by ', 'brainworks') ?><a href="https://brainworks.pro/" target="_blank">BRAIN WORKS</a> 
+    <div class="footer__wrapper">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="footer__row">
+                        <div class="footer__column footer--width">
+                            <div class="footer__logo">
+                                <?php get_default_logo_link([
+                                    'name' => 'logo-white.svg',
+                                    'options' => [
+                                        'class' => 'logo-img',
+                                        'width' => 160,
+                                        'height' => 50,
+                                    ],
+                                ]) ?>
+                            </div>
+                            <div class="footer__social">
+                                <p class="footer__social-title"><?php echo get_post_meta(get_the_ID(), 'footer_social_text', true); ?></p>
+                                <?php echo do_shortcode('[bw-social]'); ?>
+                            </div>
+                        </div>
+                        <div class="footer__column">
+                            <p class="footer__title"><?php echo get_post_meta(get_the_ID(), 'footer_category_title', true); ?></p>
+                            <div class="footer__nav-wrapper">
+                                <?php if (has_nav_menu('main-nav')) { ?>
+                                    <div class="footer__nav">
+                                        <?php wp_nav_menu(array(
+                                            'theme_location' => 'main-nav',
+                                            'container' => false,
+                                            'menu_class' => 'menu-container',
+                                            'menu_id' => '',
+                                            'fallback_cb' => 'wp_page_menu',
+                                            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                            'depth' => 3
+                                        )); ?>
+                                    </div>
+                                <?php } ?>
+                                <?php if (has_nav_menu('second-menu')) { ?>
+                                    <div class="footer__nav">
+                                        <?php wp_nav_menu(array(
+                                            'theme_location' => 'second-menu',
+                                            'container' => false,
+                                            'menu_class' => 'menu-container',
+                                            'menu_id' => '',
+                                            'fallback_cb' => 'wp_page_menu',
+                                            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                            'depth' => 3
+                                        )); ?>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <p class="footer__title"><?php echo get_post_meta(get_the_ID(), 'footer_contact_title', true); ?></p>
+                    <div class="footer__row">
+                        <div class="footer__column footer--height">
+                            <div class="footer__field">
+                                <?php
+                                $address = get_theme_mod('bw_additional_address');
+                                if (!empty($address)) { ?>
+                                    <span class="footer__icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </span>
+                                    <span class="footer__text">
+                                <?php echo pll_e('Address'); ?>
+                                </span>
+                                <?php } ?>
+                            </div>
+                            <div class="footer__field">
+                                 <span class="footer__icon">
+                                    <i class="fal fa-clock"></i>
+                                </span>
+                                <span class="footer__text">
+                                     <?php pll_e('Work Schedule'); ?>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="footer__column footer--height">
+                            <?php echo do_shortcode('[bw-phone]'); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom-section">
+        <div class="container">
+            <div class="copyright">
+                <div class="date">&copy; <?php echo date('Y'); ?>. <?php pll_e('all-right-reserved'); ?></div>
+                <div class="developer">
+                    <?php _e('Developed by ', 'brainworks') ?><a href="https://brainworks.pro/" target="_blank">BRAIN
+                        WORKS</a>
+                </div>
             </div>
         </div>
     </div>
