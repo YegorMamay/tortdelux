@@ -116,7 +116,7 @@ fieldset:disabled a.btn {
 
   &:hover {
     color: $btn-primary-color-hover;
-    box-shadow: $button_hover_box_shadow;
+    box-shadow: none;
     @if $btn-enable-gradients {
       background: $hover-background linear-gradient($btn-gradient-angle, mix(#fff, $hover-background, 15%), $hover-background) repeat-x;
     } @else {
@@ -189,7 +189,7 @@ fieldset:disabled a.btn {
 
   &:hover {
     color: $btn-primary-color-hover;
-    box-shadow: $button_hover_box_shadow;
+    box-shadow: none;
     @if $btn-enable-gradients {
       background: $hover-background linear-gradient($btn-gradient-angle, mix(#fff, $hover-background, 15%), $hover-background) repeat-x;
     } @else {
