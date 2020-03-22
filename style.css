@@ -11922,8 +11922,37 @@ ol.commentlist .comment-body {
 
 .review-list .review-social {
   outline: none;
-  bottom: 30px;
-  left: 10%;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.review-list .review-client {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.review-list .review-author {
+  color: #EE409E;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  width: 100%;
+  padding-top: 10px;
 }
 
 .review-item {
@@ -12134,10 +12163,19 @@ ol.commentlist .comment-body {
   }
 }
 
+@media screen and (max-width: 650px) {
+  .review-list .review-author {
+    font-size: 18px;
+    padding-top: 0;
+    margin-bottom: 10px;
+  }
+}
+
 @media screen and (max-width: 544px) {
   .review-list .review-social {
     bottom: 0;
-    left: 0;
+    left: auto;
+    right: 0;
   }
   .review-list .review-client {
     margin-left: auto;

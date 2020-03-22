@@ -33,8 +33,28 @@ $review-next: '\00bb'; // &raquo;
   &-list {
     & .review-social {
       outline: none;
-      bottom: 30px;
-      left: 10%;
+      bottom: 0;
+      left: auto;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    & .review-client {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    & .review-author {
+      color: $themeColorTwo;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 700;
+      width: 100%;
+      padding-top: 10px;
     }
   }
 
@@ -260,13 +280,26 @@ $review-next: '\00bb'; // &raquo;
   }
 }
 
+@media screen and (max-width: 650px) {
+  .review {
+    &-list {
+      & .review-author {
+        font-size: 18px;
+        padding-top: 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
 
 @media screen and (max-width: 544px) {
   .review {
     &-list {
       & .review-social {
         bottom: 0;
-        left: 0;
+        left: auto;
+        right: 0;
       }
 
       & .review-client {
