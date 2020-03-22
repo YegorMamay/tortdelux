@@ -52,7 +52,7 @@ $first_screen_content = get_field('first_screen_content');
         <div class="block-special__wrapper">
             <div class="row align-items-center">
                 <div class="col-12 col-lg-4">
-                    <div class="block-special__title"><?php echo $special_content_1['block_special_description']; ?></div>
+                    <div class="block-special__title block-special__arrow"><?php echo $special_content_1['block_special_description']; ?></div>
                 </div>
                 <div class="col-12 col-lg-4">
                     <div class="block-special__button-wrapper">
@@ -109,7 +109,7 @@ $first_screen_content = get_field('first_screen_content');
                     <img class="block-special__image" src="<?php echo $special_content_2['block_special_image']; ?>" alt="image">
                 </div>
                 <div class="col-12 col-lg-6">
-                    <div class="block-special__title"><?php echo $special_content_2['block_special_description']; ?></div>
+                    <div class="block-special__title block-special__arrow-middle"><?php echo $special_content_2['block_special_description']; ?></div>
 
                 </div>
                 <div class="col-12 col-lg-2">

@@ -28,6 +28,10 @@
     position: relative;
   }
 
+  &__caption {
+    position: relative;
+  }
+
   &__icon {
     display: block;
     width: 75px;
@@ -94,6 +98,24 @@
   }
 }
 
+@media screen and (min-width: 1500px) {
+  .top-section {
+    &__caption {
+      &:before {
+        content: '';
+        display: block;
+        background: url('/wp-content/themes/tortdelux/assets/img/main_arrow.svg') no-repeat center/contain;
+        width: 60px;
+        height: 100%;
+        position: absolute;
+        left: -75px;
+        bottom: -15px;
+        z-index: 1;
+      }
+    }
+  }
+}
+
 .main-title {
   text-align: center;
   margin: 15px 0 20px;
@@ -149,6 +171,7 @@
   &__title {
     color: $themeColorOne;
     font-size: 20px;
+    position: relative;
   }
 
   &__image {
@@ -188,6 +211,38 @@
     &__title {
       text-align: center;
       margin-bottom: 25px;
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .block-special {
+    &__arrow {
+      &:before {
+        content: '';
+        display: block;
+        background: url("/wp-content/themes/tortdelux/assets/img/arrow_top.svg") no-repeat center / cover;
+        width: 200px;
+        height: 45px;
+        position: absolute;
+        right: -130px;
+        bottom: -65px;
+        z-index: 1;
+      }
+    }
+
+    &__arrow-middle {
+      &:before {
+        content: '';
+        display: block;
+        background: url("/wp-content/themes/tortdelux/assets/img/arrow_middle.svg") no-repeat center / cover;
+        width: 350px;
+        height: 48px;
+        position: absolute;
+        right: -20px;
+        bottom: -65px;
+        z-index: 1;
+      }
     }
   }
 }
@@ -406,5 +461,12 @@
 @media screen and (min-width: 992px) {
   .no-padding-desktop {
     padding: 0;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .block-special {
+    margin: 15px 0;
+    padding: 25px 0;
   }
 }
