@@ -127,7 +127,7 @@ $first_screen_content = get_field('first_screen_content');
         <div class="review-section__wrapper">
             <?php echo do_shortcode('[bw-reviews]'); ?>
             <div class="review-section__button-wrapper">
-                <button class="btn btn-primary js-send-review" type="button">
+                <button class="btn btn-primary <?php the_lang_class('js-send-review'); ?>" type="button">
                     <?php echo get_post_meta(get_the_ID(), 'review_button_text', true); ?>
                 </button>
             </div>
