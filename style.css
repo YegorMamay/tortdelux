@@ -11855,6 +11855,12 @@ select {
   }
 }
 
+@media screen and (min-width: 992px) {
+  .no-padding-desktop {
+    padding: 0;
+  }
+}
+
 ol.commentlist .comment-body {
   margin-bottom: 25px;
 }
@@ -11912,6 +11918,12 @@ ol.commentlist .comment-body {
   font-size: 16px;
   line-height: 1.5;
   color: #000000;
+}
+
+.review-list .review-social {
+  outline: none;
+  bottom: 30px;
+  left: 10%;
 }
 
 .review-item {
@@ -12119,6 +12131,17 @@ ol.commentlist .comment-body {
   }
   .review-slider .slick-arrow.slick-next {
     right: -10%;
+  }
+}
+
+@media screen and (max-width: 544px) {
+  .review-list .review-social {
+    bottom: 0;
+    left: 0;
+  }
+  .review-list .review-client {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -14515,8 +14538,8 @@ fieldset:disabled a.btn {
 }
 
 .list-cat__link:hover {
-  -webkit-box-shadow: 0 0 15px 8px rgba(222, 211, 224, 0.98);
-  box-shadow: 0 0 15px 8px rgba(222, 211, 224, 0.98);
+  -webkit-box-shadow: 0 0 10px 3px #b5b5b5;
+  box-shadow: 0 0 10px 3px #b5b5b5;
 }
 
 .list-cat__img {

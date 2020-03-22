@@ -20,11 +20,11 @@ $first_screen_content = get_field('first_screen_content');
                         <h1 class="top-section__title h2"><?php echo $first_screen_content['first_screen_title']; ?></h1>
                     </div>
                     <div class="top-section__description"><?php echo $first_screen_content['first_screen_description']; ?></div>
-                    <button class="top-section__button btn btn-primary btn-lg js-order" type="button">
+                    <a href="sn_catalogs/" class="top-section__button btn btn-primary btn-lg js-order" type="button">
                         <?php echo $first_screen_content['first_screen_button_text']; ?>
                         <img src="/wp-content/themes/tortdelux/assets/img/button-cupcake.png" class="top-section__icon"
                              alt="icon">
-                    </button>
+                    </a>
                 </div>
             </div>
             <div class="col-12 col-lg-5">
@@ -41,12 +41,12 @@ $first_screen_content = get_field('first_screen_content');
             <?php get_template_part('loops/content', 'home'); ?>
         </div>
         <div class="categories-section__button-wrapper">
-            <button class="btn btn-primary btn-md js-request" type="button"><?php echo get_post_meta(get_the_ID(), 'category_button_text', true); ?></button>
+            <button class="btn btn-primary btn-md <?php the_lang_class('js-request'); ?>" type="button"><?php echo get_post_meta(get_the_ID(), 'category_button_text', true); ?></button>
         </div>
     </div>
     <img class="categories-section__decor-image" src="/wp-content/themes/tortdelux/assets/img/katalog-candy.png" alt="image">
 </section>
-<div class="block-special">
+<div class="block-special no-padding-desktop">
     <?php $special_content_1 = get_field('block_special_content_1'); ?>
     <div class="container">
         <div class="block-special__wrapper">
@@ -56,11 +56,11 @@ $first_screen_content = get_field('first_screen_content');
                 </div>
                 <div class="col-12 col-lg-4">
                     <div class="block-special__button-wrapper">
-                        <button class="block-special__button btn btn-primary js-special-1" type="button"><?php echo $special_content_1['block_special_button_text']; ?></button>
+                        <button class="block-special__button btn btn-primary <?php the_lang_class('js-special-1'); ?>" type="button"><?php echo $special_content_1['block_special_button_text']; ?></button>
                     </div>
                 </div>
                 <div class="col-12 col-lg-4">
-                    <img class="block-special__image block-special--style" src="<?php echo $special_content_1['block_special_image']; ?>" alt="image">
+                    <img class="block-special__image" src="<?php echo $special_content_1['block_special_image']; ?>" alt="image">
                 </div>
             </div>
         </div>
@@ -96,7 +96,7 @@ $first_screen_content = get_field('first_screen_content');
             </div>
         </div>
         <div class="block-advantages__button-wrapper">
-            <button class="btn btn-primary" type="button"><?php echo get_post_meta(get_the_ID(), 'advantages_button_text', true); ?></button>
+            <button class="btn btn-primary <?php the_lang_class('js-call-back'); ?>" type="button"><?php echo get_post_meta(get_the_ID(), 'advantages_button_text', true); ?></button>
         </div>
     </div>
 </section>
@@ -114,7 +114,7 @@ $first_screen_content = get_field('first_screen_content');
                 </div>
                 <div class="col-12 col-lg-2">
                     <div class="block-special__button-wrapper">
-                        <button class="block-special__button btn btn-primary js-special-2" type="button"><?php echo $special_content_2['block_special_button_text']; ?></button>
+                        <button class="block-special__button btn btn-primary <?php the_lang_class('js-special-2'); ?>" type="button"><?php echo $special_content_2['block_special_button_text']; ?></button>
                     </div>
                 </div>
             </div>
@@ -147,7 +147,7 @@ $first_screen_content = get_field('first_screen_content');
                 </div>
                 <div class="col-12 col-lg-2">
                     <div class="block-special__button-wrapper">
-                        <button class="block-special__button btn btn-primary js-special-3" type="button"><?php echo $special_content_3['block_special_button_text']; ?></button>
+                        <button class="block-special__button btn btn-primary <?php the_lang_class('js-special-3'); ?>" type="button"><?php echo $special_content_3['block_special_button_text']; ?></button>
                     </div>
                 </div>
             </div>

@@ -30,6 +30,14 @@ $review-next: '\00bb'; // &raquo;
 
 .review {
 
+  &-list {
+    & .review-social {
+      outline: none;
+      bottom: 30px;
+      left: 10%;
+    }
+  }
+
   &-item {
     margin-bottom: 30px;
     box-shadow: none;
@@ -247,6 +255,23 @@ $review-next: '\00bb'; // &raquo;
             right: -10%;
           }
         }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 544px) {
+  .review {
+    &-list {
+      & .review-social {
+        bottom: 0;
+        left: 0;
+      }
+
+      & .review-client {
+        margin-left: auto;
+        margin-right: auto;
       }
     }
   }
