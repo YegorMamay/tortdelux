@@ -43,6 +43,9 @@ add_action( 'after_setup_theme', function () {
 		pll_register_string( 'social-odnoklassniki', 'Odnoklassniki', 'Brainworks' );
 		pll_register_string( 'Call-back', 'Call-back', 'Brainworks' );
         pll_register_string( 'all-right-reserved', 'all-right-reserved', 'Brainworks' );
+        pll_register_string( 'footer-social-title', 'footer-social-title', 'Brainworks' );
+        pll_register_string( 'footer-categories-title', 'footer-categories-title', 'Brainworks' );
+        pll_register_string( 'footer-contact-title', 'footer-contact-title', 'Brainworks' );
 	}
 } );
 

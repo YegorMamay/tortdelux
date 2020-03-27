@@ -26,12 +26,12 @@
                                 ]) ?>
                             </div>
                             <div class="footer__social">
-                                <p class="footer__social-title"><?php echo get_post_meta(get_the_ID(), 'footer_social_text', true); ?></p>
+                                <p class="footer__social-title"><?php echo pll_e('footer-social-title'); ?></p>
                                 <?php echo do_shortcode('[bw-social]'); ?>
                             </div>
                         </div>
                         <div class="footer__column">
-                            <p class="footer__title"><?php echo get_post_meta(get_the_ID(), 'footer_category_title', true); ?></p>
+                            <p class="footer__title"><?php echo pll_e('footer-categories-title'); ?></p>
                             <div class="footer__nav-wrapper">
                                 <?php if (has_nav_menu('main-nav')) { ?>
                                     <div class="footer__nav">
@@ -42,7 +42,7 @@
                                             'menu_id' => '',
                                             'fallback_cb' => 'wp_page_menu',
                                             'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                                            'depth' => 3
+                                            'depth' => 1
                                         )); ?>
                                     </div>
                                 <?php } ?>
@@ -55,7 +55,7 @@
                                             'menu_id' => '',
                                             'fallback_cb' => 'wp_page_menu',
                                             'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                                            'depth' => 3
+                                            'depth' => 1
                                         )); ?>
                                     </div>
                                 <?php } ?>
@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
-                    <p class="footer__title"><?php echo get_post_meta(get_the_ID(), 'footer_contact_title', true); ?></p>
+                    <p class="footer__title"><?php echo pll_e('footer-contact-title'); ?></p>
                     <div class="footer__row">
                         <div class="footer__column footer--height">
                             <div class="footer__field">

@@ -2,7 +2,6 @@
   display: none;
 }
 
-//xs 544
 @media screen and (max-width: 1024px) {
   nav.main-nav {
     display: none;
@@ -73,6 +72,10 @@
       &-item {
         display: block;
 
+        &:hover, &:focus {
+          background: transparent;
+        }
+
         &-has-children {
           padding-right: 5px;
         }
@@ -131,7 +134,7 @@
       width: auto;
       display: none;
       visibility: visible;
-      background-color: $menuMobileSubMenuBGColor;
+      background-color: transparent;
       opacity: 1;
       box-shadow: none;
       transition: none;
@@ -157,6 +160,7 @@
       &-link {
         color: $menuMobileSubMenuTextColor;
         font-size: $menuMobileSubMenuLinkFontSize;
+        text-align: center;
       }
     }
   }

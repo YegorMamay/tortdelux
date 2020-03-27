@@ -51,7 +51,7 @@
       &:hover {
         background: $light_bg_color;
 
-        a {
+        & .menu-link {
           color: $menuFontColorActive;
         }
       }
@@ -162,7 +162,7 @@
     position: absolute;
     top: 200%;
     left: 0;
-    z-index: -5;
+    z-index: -150;
     width: 250px;
     background-color: $menuBgColorActive;
     visibility: hidden;
@@ -199,7 +199,7 @@
       .no-touch &:hover,
       &-current {
         > .sub-menu-link {
-          background-color: $menuMobileSubMenuBGOnHover;
+          background-color: transparent;
           color: $menuFontColorActive;
         }
       }
